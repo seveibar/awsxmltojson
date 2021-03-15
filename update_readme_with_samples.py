@@ -46,4 +46,4 @@ for line in og_readme_lines:
         write_og_lines = True
         new_readme_lines.append("<!-- GENERATED_SAMPLE_DOCS_STOP -->")
 
-open("./README.md", "w").write("\n".join(new_readme_lines)
+open("./README.md", "w").write("\n".join(new_readme_lines))
