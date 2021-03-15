@@ -14,7 +14,7 @@ def xml_etree_to_dict(elm, service=None, shape=None, level=1):
     
     This method was built iteratively by testing against the test suite
     and is pretty messy. Recommendations for clean up:
-    * Use dataclasses for representing all these dicts
+    * Use dataclasses for representing all these shape dicts
     * Make the logging more verbose and explicit
     
     """
@@ -27,10 +27,7 @@ def xml_etree_to_dict(elm, service=None, shape=None, level=1):
         d = {}
         for child in elm:
             child_d = xml_etree_to_dict(child, service=service, level=level + 1)
-            if not isinstance(child_d, dict):
-                d.update({child.tag: child_d})
-            else:
-                d.update(child_d)
+            d.update({child.tag: child_d})
         return {elm.tag: d}
 
     if shape == "String" or shape["type"] == "string":
@@ -94,5 +91,5 @@ def xml_etree_to_dict(elm, service=None, shape=None, level=1):
                 logger.warning(
                     f'Unknown shape type "{member_shape["type"]}" for {member_name}'
                 )
-        return {elm.tag: d}
+        return d
     return {}

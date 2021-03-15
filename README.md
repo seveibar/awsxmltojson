@@ -105,16 +105,14 @@ as a header.
         "ReceiveMessageResult": {
             "messages": [
                 {
-                    "Message": {
-                        "MessageId": "5fea7756-0ea4-451a-a703-a558b933e274",
-                        "ReceiptHandle": "MbZj6wDWli+JvwwJaBV+3dcjk2YW2vA3+STFFljTM8tJJg6HRG6PYSasuWXPJB+CwLj1FjgXUv1uSj1gUPAWV66FU/WeR4mq2OKpEGYWbnLmpRCJVAyeMjeU5ZBdtcQ+QEauMZc8ZRv37sIW2iJKq3M9MFx1YvV11A2x/KSbkJ0=",
-                        "MD5OfBody": "fafb00f5732ab283681e124bf8747ed1",
-                        "Body": "This is a test message",
-                        "SenderId": "195004372649",
-                        "SentTimestamp": "1238099229000",
-                        "ApproximateReceiveCount": "5",
-                        "ApproximateFirstReceiveTimestamp": "1250700979248"
-                    }
+                    "MessageId": "5fea7756-0ea4-451a-a703-a558b933e274",
+                    "ReceiptHandle": "MbZj6wDWli+JvwwJaBV+3dcjk2YW2vA3+STFFljTM8tJJg6HRG6PYSasuWXPJB+CwLj1FjgXUv1uSj1gUPAWV66FU/WeR4mq2OKpEGYWbnLmpRCJVAyeMjeU5ZBdtcQ+QEauMZc8ZRv37sIW2iJKq3M9MFx1YvV11A2x/KSbkJ0=",
+                    "MD5OfBody": "fafb00f5732ab283681e124bf8747ed1",
+                    "Body": "This is a test message",
+                    "SenderId": "195004372649",
+                    "SentTimestamp": "1238099229000",
+                    "ApproximateReceiveCount": "5",
+                    "ApproximateFirstReceiveTimestamp": "1250700979248"
                 }
             ]
         },
