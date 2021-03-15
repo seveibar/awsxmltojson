@@ -9,7 +9,7 @@ as a header.
 ## Usage
 
 ```python
-from awsxmltodict import convert_xml_to_dict
+from awsxmltojson import convert_xml_to_dict
 
 convert_xml_to_dict("""
 <ListQueuesResponse>
