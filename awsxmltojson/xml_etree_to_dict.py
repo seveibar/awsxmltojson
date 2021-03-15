@@ -3,10 +3,21 @@ import json
 import logging
 
 logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
+# logger.setLevel(logging.DEBUG)
 
 
 def xml_etree_to_dict(elm, service=None, shape=None, level=1):
+    """
+
+    Traverse a python ElementTree and using the AWS shapes, construct
+    a dict. Recursive method.
+    
+    This method was built iteratively by testing against the test suite
+    and is pretty messy. Recommendations for clean up:
+    * Use dataclasses for representing all these dicts
+    * Make the logging more verbose and explicit
+    
+    """
     if service is None:
         service = get_service(elm.tag)
 
