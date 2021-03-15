@@ -6,6 +6,36 @@ This module converts AWS API XML responses to JSON, it
 matches the output of AWS APIs where `Accept: application/json` is provided
 as a header.
 
+## Usage
+
+```python
+from awsxmltodict import convert_xml_to_dict
+
+convert_xml_to_dict("""
+<ListQueuesResponse>
+    <ListQueuesResult>
+        <QueueUrl>https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue</QueueUrl>
+    </ListQueuesResult>
+    <ResponseMetadata>
+        <RequestId>725275ae-0b9b-4762-b238-436d7c65a1ac</RequestId>
+    </ResponseMetadata>
+</ListQueuesResponse>
+""")
+# Outputs...
+{
+    "ListQueuesResponse": {
+        "ListQueuesResult": {
+            "queueUrls": [
+                "https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue"
+            ]
+        },
+        "ResponseMetadata": {
+            "RequestId": "725275ae-0b9b-4762-b238-436d7c65a1ac"
+        }
+    }
+}
+```
+
 ## Examples
 
 <!-- GENERATED_SAMPLE_DOCS_START -->
@@ -161,3 +191,4 @@ as a header.
 2. Add it so it's loaded in `get_shape.py`
 3. Write a couple sample tests use example responses from the AWS documentation to make sure
    it's working
+4. Run `update_readme_with_samples.py` to have your samples added to the README
