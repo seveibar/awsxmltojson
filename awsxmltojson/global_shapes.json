@@ -6,5 +6,26 @@
         "shape": "String"
       }
     }
+  },
+  "ErrorResponse": {
+    "type": "structure",
+    "members": {
+      "Error": {
+        "shape": "Error",
+        "locationName": "Error"
+      }
+    }
+  },
+  "Error": {
+    "type": "structure",
+    "members": {
+      "Code": { "shape": "String" },
+      "Details": { "shape": "String" },
+      "Message": { "shape": "String" },
+      "Type": { "shape": "String" }
+    }
+  },
+  "String": {
+    "type": "string"
   }
 }

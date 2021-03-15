@@ -1,9 +1,7 @@
 from awsxmltojson import convert_xml_to_dict
 
 sample_input = """
-<?xml version="1.0"?>
-<ErrorResponse
-    xmlns="http://queue.amazonaws.com/doc/2012-11-05/">
+<ErrorResponse>
     <Error>
         <Type>Sender</Type>
         <Code>AccessDenied</Code>
@@ -17,11 +15,11 @@ sample_input = """
 
 def test_sqs_list_queues():
     assert convert_xml_to_dict(sample_input) == {
-        "ListQueuesResponse": {
-            "ListQueuesResult": {
-                "queueUrls": [
-                    "https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue"
-                ]
+        "ErrorResponse": {
+            "Error": {
+                "Code": "AccessDenied",
+                "Message": "Access to the resource https://sqs.us-east-1.amazonaws.com/ is denied.",
+                "Type": "Sender",
             }
         }
     }

@@ -1,3 +1,6 @@
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
 from awsxmltojson import convert_xml_to_dict
 
 sample_input = """
@@ -19,6 +22,7 @@ def test_sqs_list_queues():
                 "queueUrls": [
                     "https://sqs.us-east-2.amazonaws.com/123456789012/MyQueue"
                 ]
-            }
+            },
+            "ResponseMetadata": {"RequestId": "725275ae-0b9b-4762-b238-436d7c65a1ac"},
         }
     }
