@@ -1,0 +1,10 @@
+{
+  "ResponseMetadata": {
+    "type": "structure",
+    "members": {
+      "RequestId": {
+        "shape": "String"
+      }
+    }
+  }
+}
