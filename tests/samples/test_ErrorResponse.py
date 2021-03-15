@@ -20,6 +20,7 @@ def test_sqs_list_queues():
                 "Code": "AccessDenied",
                 "Message": "Access to the resource https://sqs.us-east-1.amazonaws.com/ is denied.",
                 "Type": "Sender",
-            }
+            },
+            "RequestId": "2d121ac6-aeee-515c-8d04-420e02b34285",
         }
     }

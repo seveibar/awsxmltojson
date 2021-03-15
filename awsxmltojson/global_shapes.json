@@ -7,15 +7,6 @@
       }
     }
   },
-  "ErrorResponse": {
-    "type": "structure",
-    "members": {
-      "Error": {
-        "shape": "Error",
-        "locationName": "Error"
-      }
-    }
-  },
   "Error": {
     "type": "structure",
     "members": {
@@ -25,6 +16,7 @@
       "Type": { "shape": "String" }
     }
   },
+  "RequestId": { "type": "string" },
   "String": {
     "type": "string"
   }

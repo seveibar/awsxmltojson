@@ -11,14 +11,15 @@ def xml_etree_to_dict(elm, service=None, shape=None, level=1):
         service = get_service(elm.tag)
 
     shape = shape or get_shape(elm.tag, service=service)
-    logger.debug(
-        ">" * level + " " + elm.tag + " " + json.dumps(shape)
-    )
+    logger.debug(">" * level + " " + elm.tag + " " + json.dumps(shape))
     if shape is None:
         d = {}
         for child in elm:
             child_d = xml_etree_to_dict(child, service=service, level=level + 1)
-            d.update(child_d)
+            if not isinstance(child_d, dict):
+                d.update({child.tag: child_d})
+            else:
+                d.update(child_d)
         return {elm.tag: d}
 
     if shape == "String" or shape["type"] == "string":
